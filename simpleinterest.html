@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2><b>Simple Interest Activity</h2>
+        <form>
+          <label for="principal">Principal Amount:</label>
+          <input type="text" id="principal" placeholder="Enter principal amount">
+          <br>
+          <br>
+          <label for="rate">Interest Rate:</label>
+          <input type="text" id="rate" placeholder="Enter interest rate">
+          <br>
+          <br>
+          <label for="time">Time (in years):</label>
+          <input type="text" id="time" placeholder="Enter time in years">
+          <br>
+          <br>
+          <button type="button" onclick="calculateSimpleInterest()"><b>Calculate Interest</button>
+        </form>
+       
+        <div id="result"></div>
+
+        <script>
+  
+            function calculateSimpleInterest() {
+              
+              let principal = parseFloat(document.getElementById('principal').value);
+              let rate = parseFloat(document.getElementById('rate').value);
+              let time = parseFloat(document.getElementById('time').value);
+        
+              
+              if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+                alert("Please enter valid numeric values.");
+                return;
+              }
+        
+          
+              let interest = (principal * rate * time) / 100;
+        
+           
+              document.getElementById('result').innerText = "Simple Interest: " + interest;
+            }
+          </script>
+          </center>
+    
+</body>
+</html>
